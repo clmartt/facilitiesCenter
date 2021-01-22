@@ -53,6 +53,10 @@ class ControladorLogar extends Controller
            $office = $value['office'];
            session()->put('idempresa',$value['idempresa']);
            session()->put('office',$value['office']);
+           session()->put('posicao',$value['posicoes']);
+           session()->put('estacionamento',$value['estacionamento']);
+           session()->put('salas',$value['salas']);
+           session()->put('visitantes',$value['visitantes']);
 
         }
         // chama o metodo da api 

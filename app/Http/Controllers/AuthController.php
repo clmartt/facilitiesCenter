@@ -9,6 +9,7 @@ use App\TokenStore\TokenCache;
 use Illuminate\Http\Request;
 use Microsoft\Graph\Graph;
 use Microsoft\Graph\Model;
+use App\Empresa;
 
 class AuthController extends Controller
 {
@@ -83,6 +84,8 @@ class AuthController extends Controller
 
         $tokenCache = new TokenCache();
         $tokenCache->storeTokens($accessToken, $user);
+
+        
 
         return redirect('/modulo');
       }
