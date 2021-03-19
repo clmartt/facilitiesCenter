@@ -7,6 +7,8 @@ use App\Usuario;
 use App\Reserva;
 use App\ReservaSala;
 use App\VagaReserva;
+use App\Grupo;
+use App\CentroCusto;
 
 
 class ControladorUsuario extends Controller
@@ -80,7 +82,13 @@ class ControladorUsuario extends Controller
      */
     public function create()
     {
-        return view('newuser.newuser');
+        $idempresa = session()->get('idempresa');
+        $grupos = Grupo::where('id_empresa',$idempresa)->get();
+        $centroCusto = CentroCusto::where('id_empresa',$idempresa)->get();
+
+        return view('usuario.newuser')
+        ->with('centroCusto',$centroCusto)
+        ->with('grupos',$grupos);
     }
 
     /**
@@ -115,8 +123,8 @@ class ControladorUsuario extends Controller
         $usuario->email = $request->email;
         $usuario->senha = $request->senha;
         $usuario->perfil = $request->perfil;
-        $usuario->area = $request->area;
-        $usuario->gestor = $request->gestor;
+        $usuario->centroCusto = $request->selectCC;
+        $usuario->id_grupo = $request->selectGrupo;
         if($request->sim){
             $usuario->garagem = 1;
         }else{
@@ -125,12 +133,12 @@ class ControladorUsuario extends Controller
 
         }
         $usuario->save();
-        
-        return view('newuser.newuser')->with('ok','ok');
+                
+        //return view('usuario.newuser')->with('ok','ok');
+        return redirect()->back()->with(['ok'=>'ok']);
         
          
     }
-
 // atualiza a senha
     public function atualizasenha(Request $request)
     {
@@ -138,10 +146,55 @@ class ControladorUsuario extends Controller
         return view('login')->with('user',$request->email);
     }
 
+    public function listaUsuario(){
+        $idempresa = session()->get('idempresa');
+
+        $usuario = Usuario::where('empresa_idempresa',$idempresa)->get();
+
+        return view('usuario.listausuario')->with('usuario',$usuario);
+    }
   
+    public function editUser(Request $request){
+        $idempresa = session()->get('idempresa');
+        $idUser = $request->idUser;
+        $usuario = Usuario::where('idusuario',$idUser)->where('empresa_idempresa',$idempresa)->get();
+        $centroCusto = CentroCusto::where('id_empresa',$idempresa)->get();
+        $grupos = Grupo::where('id_empresa',$idempresa)->get();
+        return view('usuario.edituser')
+        ->with('grupos',$grupos)
+        ->with('centroCusto',$centroCusto)
+        ->with('usuario',$usuario);
+    }
 
+    public function atualizaUser(Request $request){
+        //dd($request->all());
+          $up = Usuario::where('empresa_idempresa',$request->empresa)
+          ->where('idusuario',$request->iduser)
+          ->update([
+             'nome_usuario'=> $request->nome,
+             'email'=> $request->email,
+             'perfil'=> $request->perfil,
+             'centroCusto'=> $request->selectCC,
+             'id_grupo'=> $request->selectGrupo
+ 
+ 
+          ]);
+ 
+          if($up){
+             return redirect()->route('listaUsuario');
+          }else{
+             return back()->with('error','Ops! Algo errado na Atualização');
+          }
+     }
+ 
 
-
+     public function deletaUsuario(Request $request){
+        $idempresa = session()->get('idempresa');
+        $idUser = $request->idUser;
+        $user = Usuario::where('empresa_idempresa',$idempresa)
+        ->where('idusuario',$idUser)->delete();
+        return redirect()->back();
+    }
 
 
     /**
