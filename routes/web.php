@@ -11,6 +11,11 @@ Route::get('/calendar/{sala?}/{dia?}', 'CalendarController@calendar')->name('cal
 Route::get('/calendar/new', 'CalendarController@getNewEventForm');
 Route::post('/calendar/new', 'CalendarController@createNewEvent');
 Route::get('/calendar/new/{sala}/{horaInicio}/{horaFim}','ControladorDataHora@EnviaDataHora');
+
+Route::get('/teste', function()
+{
+    return view('template.templayout');
+});
 //--------------------------------------------------------------------------------------------------------
 
 // rotas de POST
@@ -21,11 +26,18 @@ Route::post('/salvaruser','ControladorUsuario@store')->name('salvauser');
 Route::post('newpass','ControladorUsuario@atualizasenha')->name("newpass");
 Route::post('/salvaVaga','ControladorVaga@store')->name('salvarVaga');
 Route::post('/upVaga','ControladorVaga@qtdUp')->name('upVaga');
-
+Route::post('/salvagrupo','ControladorGrupo@salvaGrupo')->name('salvaGrupo');
+Route::post('/definirGrupo','ControladorPosicao@definirGrupo')->name('definirGrupo');
+Route::post('/salvaEditarGrupo','ControladorGrupo@salvaEditarGrupo')->name('salvaEditarGrupo');
+Route::post('/deletaGrupo','ControladorGrupo@deletaGrupo')->name('deletaGrupo');
+Route::post('/atualizaUser','ControladorUsuario@atualizaUser')->name('atualizaUser');
+Route::post('/deletaUsuario','ControladorUsuario@deletaUsuario')->name('deletaUsuario');
 
 //Rotas de DELETE
 Route::delete('/cancela/{id?}/{layout?}','ControladorCancela@destroy')->name('cancelar');
 Route::delete('/cancelaVaga/{id?}/{layout?}','ControladorCancelaVaga@destroy')->name('cancelarVaga');
+
+
 
 
 // ROTAS DE GET DAS POSIÇÕES LAYOUT E LOGIN
@@ -38,7 +50,11 @@ Route::get('/bloqueadas','ControladorPosicao@bloqueada')->name('bloqueadas');
 Route::get('/colaborador','ControladorUsuario@index')->name('colaborador');
 Route::get('/confirm','ControladorConfirm@index')->name('confirm');
 Route::get('/desbloqueio/{posicao?}','ControladorDesbloqueio@desbloquear')->name("desbloqueio");
-Route::get('/newuser','ControladorUsuario@create')->name('newuser');
+Route::get('/newuser','ControladorUsuario@create')->name('novoUsuario');
+Route::get('/formgrupo','ControladorGrupo@formGrupo')->name('formGrupo');
+Route::get('/listaGrupos','ControladorGrupo@listaGrupos')->name('listaGrupos');
+Route::get('/listaUsuario','ControladorUsuario@listaUsuario')->name('listaUsuario');
+Route::get('/editUser','ControladorUsuario@editUser')->name('editUser');
 
 
 
@@ -47,7 +63,7 @@ Route::get('/newuser','ControladorUsuario@create')->name('newuser');
 
 
 // ROTA DOS ANDARES
-Route::get('/kvmterreo/{dia?}','ControladorLayout@kvmterreo')->name('kvmterreo');
+Route::get('/12andar/{dia?}','ControladorLayout@Andar12')->name('12andar');
 Route::get('/kvmp01/{dia?}','ControladorLayout@kvmp01')->name('kvmp01');
 Route::get('/kvmsub/{dia?}','ControladorLayout@kvmsub')->name('kvmsub');
 //=======================================================================================
