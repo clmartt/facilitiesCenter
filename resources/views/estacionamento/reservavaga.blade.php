@@ -1,6 +1,6 @@
-@extends('template.tempgaragem')
+@extends('template.templayout')
 
-@section('conteudo')
+@section('layout')
    <div class="row justify-content-md-center "> 
       <div class="card text-center shadow p-3 mb-5 bg-white rounded" style="width: 50rem">
          <div class="card-header">

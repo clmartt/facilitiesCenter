@@ -1,4 +1,4 @@
-@extends('template.tempposicoes')
+@extends('template.templayout')
 
 @section('layout')
 @isset($nomePosicao)
@@ -12,12 +12,15 @@
                 @isset($dia)
                 <p class="card-text">Para o dia : <b>{{ date("d-m-Y", strtotime($dia))}}</b></p>
                 @endisset
-                @if (session()->get('garagem')==1)
+                @if (session()->get('garagem')==1  )
                     @isset($estacionamento)
                         @if ($estacionamento > 0 )
                         <p class="card-text btn btn-link" ><i class="fa fa-check-circle-o text-primary" aria-hidden="true"></i> Você já possui reserva de estacionamento para este dia!</p>
                         @else
-                        <p class="card-text btn btn-link" ><a href="{{route('reservavaga',$dia)}}" class=""><i class="fa fa-car" aria-hidden="true"></i> Estacionamento</a></p>
+                            @if (session()->get('estacionamento') == 'sim')
+                                <p class="card-text btn btn-link" ><a href="{{route('reservavaga',$dia)}}" class=""><i class="fa fa-car" aria-hidden="true"></i> Estacionamento</a></p>
+                            @endif
+                        
                         @endif
                     @endisset
                    

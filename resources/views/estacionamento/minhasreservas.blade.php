@@ -1,6 +1,6 @@
-@extends('template.tempgaragem')
+@extends('template.templayout')
 
-@section('conteudo')
+@section('layout')
 
 @isset($minhasReservas)
    

@@ -1,6 +1,6 @@
-@extends('template.tempvisitante')
+@extends('template.templayout')
 
-@section('conteudo')
+@section('layout')
 {{ csrf_field() }}
 <div class="container">
     <div class="card">

@@ -1,4 +1,4 @@
-@extends('template.tempposicoes')
+@extends('template.templayout')
 
 @section('layout')
 @isset($agendado)

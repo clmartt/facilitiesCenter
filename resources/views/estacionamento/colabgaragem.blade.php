@@ -1,6 +1,6 @@
-@extends('template.tempgaragem')
+@extends('template.templayout')
 
-@section('conteudo')
+@section('layout')
 <div class="container shadow p-3 mb-5 bg-white rounded">
   
    <caption>Colaboradores </b></caption>

@@ -35,7 +35,7 @@
        
         <a class="navbar-brand"  href="{{route('backmodulo')}}">
           <i class="fa fa-car text-primary" aria-hidden="true"></i>
-                Facilities Center
+                Power Service
             </a>
        
             

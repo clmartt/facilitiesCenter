@@ -1,6 +1,6 @@
-@extends('template.tempgaragem')
+@extends('template.templayout')
 
-@section('conteudo')
+@section('layout')
    <div class="container justify-content-md-center "> 
       @isset($dia)
             <caption>Estacionamento para : <b>{{date("d-m-Y",strtotime($dia))}}</b></caption>
@@ -10,8 +10,8 @@
                      <thead>
                      <tr class="text-center">
                         <th scope="col">Qtd</th>
-                        <th scope="col"><i class="fa fa-car btn btn-danger" aria-hidden="true"></i> </th>
-                        <th scope="col"><i class="fa fa-car btn btn-success" aria-hidden="true"></i></th>
+                        <th scope="col"><i class="fa fa-car btn btn-danger text-white" aria-hidden="true"></i> </th>
+                        <th scope="col"><i class="fa fa-car btn btn-success text-white" aria-hidden="true"></i></th>
                         
                      </tr>
                      </thead>
@@ -39,20 +39,21 @@
                         </div>
                         <div class="card-body ">
                         
-                        <form method="POST" action={{route('upVaga')}}>
-                           
-                           @csrf
-                              <div class="form-row">
-                               
-                                <div class="col">
-                                  <input type="text" class="form-control" placeholder="QTD" name="qtd" required>
-                                </div>
-                                <div class="col">
-                                 <button type="submit" class="btn btn-info">Salvar</button>
-                                </div>
-                              </div>
-                        </form>
-                   </div>
+                                    <form method="POST" action={{route('upVaga')}}>
+                                       
+                                       @csrf
+                                          <div class="form-row">
+                                          
+                                                   <div class="col">
+                                                      <input type="text" class="form-control" placeholder="QTD" name="qtd" required>
+                                                   </div>
+                                                   <div class="col">
+                                                      <button type="submit" class="btn btn-info">Salvar</button>
+                                                   </div>
+                                          </div>
+                                    </form>
+                        </div>
+                  </div>
       </div>
 
       

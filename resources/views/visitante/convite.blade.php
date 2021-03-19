@@ -1,6 +1,6 @@
-@extends('template.tempvisitante')
+@extends('template.templayout')
 
-@section('conteudo')
+@section('layout')
     <div class="container">
         <div class="card">
             <div class="card-body">

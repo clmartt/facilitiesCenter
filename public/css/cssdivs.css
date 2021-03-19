@@ -1,509 +1,1080 @@
-#T1{
+#principal{
+    border-width: 1px;
+    width: 1300px;
+    height: 650px;
+    margin-left: 50px;
+    display: block;
+    
+    
+}
+
+
+#txtP{
+    transform: rotate(-90deg);
+    font-size: 6px;
+    text-align: center;
+}
+
+#P31{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -540px;
-    left: 317px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1265px;
+    left: 62px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T2{
+#P31:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P32{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -602px;
-    left: 317px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1278px;
+    left: 84px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T3{
+#P32:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P33{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -600px;
-    left: 374px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1289px;
+    left: 105px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T4{
+#P33:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P34{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -662px;
-    left: 374px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1303px;
+    left: 127px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T5{
+#P34:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P35{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -660px;
-    left: 431px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1317px;
+    left: 149px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T6{
+#P35:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P36{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -722px;
-    left: 431px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1329px;
+    left: 170px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
+#P36:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
 
-#T7{
+#P37{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -850px;
-    left: 317px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1342px;
+    left: 192px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T8{
+#P37:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P38{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -911px;
-    left: 317px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1342px;
+    left: 192px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T9{
+#P38:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P39{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -910px;
-    left: 374px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1355px;
+    left: 171px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T10{
+#P39:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P40{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -971px;
-    left: 374px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1369px;
+    left: 149px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-
-#T11{
-
-    position: relative;
-    width: 55px;
-    height: 30px;
-    top: -970px;
-    left: 430px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
+#P40:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
 }
-#T12{
+#P41{
 
     position: relative;
-    width: 55px;
-    height: 30px;
-    top: -1031px;
-    left: 430px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-
-#T13{
-
-    position: relative;
-    width: 55px;
-    height: 30px;
-    top: -1221px;
-    left: 373px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-
-#T14{
-
-    position: relative;
-    width: 55px;
-    height: 30px;
-    top: -1282px;
-    left: 373px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-#T15{
-
-    position: relative;
-    width: 55px;
-    height: 30px;
-    top: -1282px;
-    left: 430px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-
-#T16{
-
-    position: relative;
-    width: 55px;
-    height: 30px;
-    top: -1343px;
-    left: 430px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-#T17{
-
-    position: relative;
-    width: 30px;
-    height: 55px;
-    top: -881px;
-    left: 653px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-#T18{
-
-    position: relative;
-    width: 30px;
-    height: 55px;
-    top: -936px;
-    left: 685px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-#T19{
-
-    position: relative;
-    width: 30px;
-    height: 55px;
-    top: -1048px;
-    left: 653px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-#T20{
-
-    position: relative;
-    width: 30px;
-    height: 55px;
-    top: -1103px;
-    left: 685px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-#T21{
-
-    position: relative;
-    width: 30px;
-    height: 55px;
-    top: -1215px;
-    left: 654px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-#T22{
-
-    position: relative;
-    width: 30px;
-    height: 55px;
-    top: -1270px;
-    left: 685px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
-}
-#T23{
-
-    position: relative;
-    width: 30px;
-    height: 55px;
+    width: 22px;
+    height: 13px;
     top: -1382px;
-    left: 654px;
-    background-color: rgb(76, 253, 6);
+    left: 128px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T24{
+#P41:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P42{
 
     position: relative;
-    width: 30px;
-    height: 55px;
-    top: -1437px;
-    left: 685px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1394px;
+    left: 105px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T25{
+#P42:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P43{
 
     position: relative;
-    width: 30px;
-    height: 55px;
-    top: -1613px;
-    left: 655px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1407px;
+    left: 85px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#T26{
+#P43:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P44{
 
     position: relative;
-    width: 30px;
-    height: 55px;
-    top: -1668px;
-    left: 686px;
-    background-color: rgb(76, 253, 6);
+    width: 22px;
+    height: 13px;
+    top: -1420px;
+    left: 64px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
+#P44:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
 
-#T27{
+
+
+
+#P123{
 
     position: relative;
-    width: 30px;
-    height: 55px;
-    top: -1781px;
-    left: 655px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -162px;
+    left: 660px;
+    
+    background-color: rgb(192,192,192);
+   
+   
     
     z-index: 99;
 }
-#T28{
+
+#P123:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P124{
 
     position: relative;
-    width: 30px;
-    height: 55px;
-    top: -1836px;
-    left: 686px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -162px;
+    left: 660px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-
-#P1{
-
-    position: relative;
-    width: 57px;
-    height: 30px;
-    top: -689px;
-    left: 307px;
-    background-color: rgb(76, 253, 6);
-    
-    z-index: 99;
+#P124:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
 }
-#P2{
+#P125{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -750px;
-    left: 307px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -162px;
+    left: 660px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P3{
+#P125:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P126{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -749px;
-    left: 366px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -162px;
+    left: 660px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P4{
+#P126:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P127{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -810px;
-    left: 366px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -162px;
+    left: 660px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P5{
+#P127:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P128{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -808px;
-    left: 424px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -162px;
+    left: 660px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P6{
+#P128:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P129{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -870px;
-    left: 424px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -162px;
+    left: 660px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P7{
+#P129:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P136{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1009px;
-    left: 307px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -287px;
+    left: 675px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P8{
+#P136:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P135{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1070px;
-    left: 307px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -287px;
+    left: 675px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P9{
+#P135:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P134{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1069px;
-    left: 366px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -287px;
+    left: 675px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P10{
+#P134:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P133{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1130px;
-    left: 366px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -287px;
+    left: 675px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P11{
+#P133:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P132{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1129px;
-    left: 424px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -287px;
+    left: 675px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P12{
+#P132:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P131{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1190px;
-    left: 424px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -287px;
+    left: 675px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P13{
+#P131:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P130{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1245px;
-    left: 628px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -287px;
+    left: 675px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P14{
+#P130:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P137{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1308px;
-    left: 628px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -412px;
+    left: 720px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P15{
+#P137:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P138{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1306px;
-    left: 686px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -412px;
+    left: 720px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
-#P16{
+#P138:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P139{
 
     position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1368px;
-    left: 686px;
-    background-color: rgb(76, 253, 6);
+    width: 13px;
+    height: 18px;
+    top: -412px;
+    left: 720px;
+    background-color: rgb(192,192,192);
     
     z-index: 99;
 }
+#P139:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P140{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -412px;
+    left: 720px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P140:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P141{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -412px;
+    left: 720px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P141:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P142{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -412px;
+    left: 720px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P142:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P148{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -520px;
+    left: 734px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P148:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P147{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -520px;
+    left: 734px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P147:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P146{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -520px;
+    left: 734px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P146:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P145{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -520px;
+    left: 734px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P145:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P144{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -520px;
+    left: 734px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P144:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P143{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -520px;
+    left: 734px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P143:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P149{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -628px;
+    left: 784px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P149:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P150{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -628px;
+    left: 784px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P150:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P151{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -628px;
+    left: 784px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P151:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P152{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -628px;
+    left: 784px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P152:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P153{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -628px;
+    left: 784px;
+    
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P153:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P154{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -628px;
+    left: 784px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P154:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P155{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -628px;
+    left: 784px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P155:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P162{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -755px;
+    left: 799px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P162:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P161{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -754px;
+    left: 799px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P161:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P160{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -754px;
+    left: 799px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P160:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P159{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -754px;
+    left: 799px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P159:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P158{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -754px;
+    left: 799px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P158:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P157{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -754px;
+    left: 799px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P157:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P156{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -754px;
+    left: 799px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P156:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P163{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -879px;
+    left: 846px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P163:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P164{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -878px;
+    left: 846px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P164:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P165{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -878px;
+    left: 846px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P165:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P166{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -878px;
+    left: 846px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P166:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P167{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -881px;
+    left: 846px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P167:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P168{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -881px;
+    left: 846px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P168:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P174{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -990px;
+    left: 860px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P174:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P173{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -990px;
+    left: 860px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P173:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P172{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -990px;
+    left: 860px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P172:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P171{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -990px;
+    left: 860px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P171:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+#P170{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -990px;
+    left: 860px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P170:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+#P169{
+
+    position: relative;
+    width: 13px;
+    height: 18px;
+    top: -990px;
+    left: 860px;
+    background-color: rgb(192,192,192);
+    
+    z-index: 99;
+}
+#P179:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
 #Preuniao01{
 
-    position: relative;
-    width: 57px;
-    height: 30px;
-    top: -720px;
-    left: 440px;
+    width: 13px;
+    height: 18px;
+    top: -878px;
+    left: 846px;
      z-index: 99;
 }
 #Preuniao02{
 
-    position: relative;
-    width: 57px;
-    height: 30px;
-    top: -890px;
+    width: 13px;
+    height: 18px;
+    top: -878px;
+    left: 846px;
     left: 740px;
    
     
@@ -511,11 +1082,10 @@
 }
 #Ptreinamento{
 
-    position: relative;
-    width: 57px;
-    height: 30px;
-    top: -1050px;
-    left: 740px;
+    width: 13px;
+    height: 18px;
+    top: -878px;
+    left: 846px;
 
     
     z-index: 99;

@@ -24,7 +24,7 @@
                             @isset($usuario)
                             
                                 @foreach ($usuario as $u)
-                                {{dd($u->grupo)}}
+                                
                                 <tr>
                                   <th>{{$u->nome_usuario}}</th>
                                   <td>{{$u->email}}</td>

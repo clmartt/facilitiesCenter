@@ -2,7 +2,7 @@
      Licensed under the MIT License. -->
 
 <!-- <CalendarSnippet> -->
-  @extends('template.tempposicoes')
+  @extends('template.templayout')
 
   @section('layout')
   

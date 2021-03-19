@@ -2,7 +2,7 @@
      Licensed under the MIT License. -->
 
 <!-- <NewEventFormSnippet> -->
-@extends('template.tempposicoes')
+@extends('template.templayout')
 
 @section('layout')
 

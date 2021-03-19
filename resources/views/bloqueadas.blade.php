@@ -1,4 +1,4 @@
-@extends('template.tempposicoes')
+@extends('template.templayout')
 
 @section('layout')
   @isset($bloqueadas)
@@ -10,6 +10,7 @@
                      <th scope="col">Andar</th>
                      <th scope="col">Finalidade</th>
                      <th scope="col">Para</th>
+                     <th scope="col">Motivo</th>
                      <th scope="col">Liberar</th>
                      
                      
@@ -23,7 +24,12 @@
                      <td>{{$b['andar']}}</td>
                      <td>{{$b['finalidade']}}</td>
                      <td>{{$b['bloqueio_para']}}</td>
-                     <td><a href=" {{route('desbloqueio',$b['nome_posicao'])}}" class="btn btn-outline-warning">Desbloquear</a></td>
+                     <td>{{$b['motivo_block']}}</td>
+                     <td>
+                        @if (session()->get('perfil')== 'adm')
+                        <a href=" {{route('desbloqueio',$b['nome_posicao'])}}" class="btn btn-outline-warning">Desbloquear</a>
+                        @endif
+                     </td>
                      </tr>
 
                      @endforeach

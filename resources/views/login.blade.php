@@ -4,51 +4,77 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('temp/fonts/icomoon/style.css')}}">
+
+    <link rel="stylesheet" href="{{asset('temp/css/owl.carousel.min.css')}}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('temp/css/bootstrap.min.css')}}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{{asset('temp/css/style.css')}}">
 
-    <title>Login</title>
+    <title>LOGIN </title>
   </head>
   <body>
   
-    <div class="row justify-content-md-center" style="margin-top: 150px">
-    <div class="card shadow p-3 mb-5 bg-white rounded"  style="width: 30rem">
-      <div class="card-header bg-transparent text-center">
-        <b> LOGIN</b>
-      </div>
-      <div class="card-body">
-          <form method="POST" action="{{route('modulos')}}">
-            @csrf
-              <div class="form-group">
-                <label for="email">Email address</label>
-              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="{{$user ?? ''}}">
+
+  
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 order-md-2">
+          <img src="{{asset('temp/images/pws.jpg')}}" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <img src="{{asset('img/logoL.jpg')}}" alt="">
+              <p class="mb-4">Gerencie Posições de trabalho, estacionamento e muito mais!!!</p>
+            </div>
+            <form method="POST" action="{{route('modulos')}}">
+              @csrf
+              <div class="form-group first">
+                <label for="username">Email</label>
+                <input type="text" class="form-control"  id="email" name="email">
+
+              </div>
+              <div class="form-group last mb-4">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control"  id="senha" name="senha">
+                
+              </div>
               
+              <div class="d-flex mb-5 align-items-center">
+             
+                <span class="ml-auto"><a href="#" class="forgot-pass">Esqueci a senha</a></span> 
               </div>
-              <div class="form-group">
-                <label for="senha">Password</label>
-                <input type="password" class="form-control" id="senha" name="senha">
-              </div>
-                         
-            
-              <div class="text-center"><button type="submit" class="btn btn-primary">Submit</button></div>
+
+              <input type="submit" value="Entrar" class="btn text-white btn-block btn-primary">
+
+       
             </form>
-      </div>
-      @isset($erro)
-      <div class="card-footer text-center">
-                 <div class="alert alert-danger" role="alert">
+            @isset($erro)
+                <div class="alert alert-danger" role="alert">
                   {{$erro}}
                 </div>
-      </div>
+            @endisset
+            </div>
+          </div>
           
-      @endisset
+        </div>
+        
+      </div>
     </div>
   </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+    <script src="{{asset('temp/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('temp/js/popper.min.js')}}"></script>
+    <script src="{{asset('temp/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('temp/js/main.js')}}"></script>
   </body>
 </html>
