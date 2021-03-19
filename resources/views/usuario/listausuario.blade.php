@@ -24,11 +24,11 @@
                             @isset($usuario)
                             
                                 @foreach ($usuario as $u)
-                                
+                               
                                 <tr>
                                   <th>{{$u->nome_usuario}}</th>
                                   <td>{{$u->email}}</td>
-                                  <td>{{$u->grupo}}</td>
+                                  <td>{{$u->grupo->nome_grupo}}</td>
                                   <td>{{$u->perfil}}</td>
                                   <td>{{$u->centroCusto}}</td>
                                   <td><a class="btn btn-link text-info" href="{{route('editUser',['idUser'=>$u->idusuario])}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
