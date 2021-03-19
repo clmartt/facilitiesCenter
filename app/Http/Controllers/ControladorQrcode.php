@@ -77,10 +77,58 @@ class ControladorQrcode extends Controller
 
 
     public function checado(Request $request){
-      
+        date_default_timezone_set('America/Sao_Paulo');
+        $data = date('Y-m-d');
+               
+         
+               // pega o id do usuario da tabela reserva pelo nome da posição
+            $idUser = Reserva::select('usuario_idusuario')->where('nome_posicao',$request->posicao)
+            ->where('empresa_idempresa',$request->idempresa)
+            ->where('data_reserva',$data)->get();
+            
+            $idUsuarioDaReserva = $idUser[0]['usuario_idusuario'];
+
+
+            // vai contar se o usuario que tentou realizar o checkin existe como usuario cadastrado
+            $userCheckQtd  = Usuario::select('idusuario')->where('email',$request->email)
+            ->where('empresa_idempresa',$request->idempresa)
+            ->where('senha',$request->senha)->count();
+
+            if($userCheckQtd>0){ // se ele existir
+
+                $userCheckID  = Usuario::select('idusuario')->where('email',$request->email)
+                ->where('empresa_idempresa',$request->idempresa)
+                ->where('senha',$request->senha)->get();
+                $guardaUserCheckId = $userCheckID[0]['idusuario']; 
+
+
+            }else{ // se nao existir
+                return view('qrcode.evoce')->with("error","1")
+                ->with('posicao',$request->posicao)
+                ->with('idempresa',$request->idempresa)
+                ->with('ocupante', $request->email);
+            }
+
+// agora compara se o usuario da reserva é o mesmo usuario que tento fazer o login
+
+                if($idUsuarioDaReserva == $guardaUserCheckId){
+                    $reserva = Reserva::where('nome_posicao',$request->posicao)
+                    ->where('empresa_idempresa',$request->idempresa)
+                    ->where('data_reserva',$data)
+                    ->update(['checado'=>'sim','hora_check'=>date('H:i:s')]);
+
+                    return view("qrcode.checkin");
+
+                }else{
+                    return view('qrcode.evoce')->with("error","1")->with('posicao',$request->posicao)->with('idempresa',$request->idempresa)->with('ocupante', $request->email);
+                }
+                  
+
+        
+
             
    
-       
+       /*
        $user  = Usuario::where('email',$request->email)
        ->where('empresa_idempresa',$request->idempresa)
        ->where('senha',$request->senha)->count();
@@ -102,7 +150,7 @@ class ControladorQrcode extends Controller
           
          return view('qrcode.evoce')->with("error","1")->with('posicao',$request->posicao)->with('idempresa',$request->idempresa)->with('ocupante', $request->email);
        }
-      
+      */
 
     }
 

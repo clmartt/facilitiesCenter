@@ -28,6 +28,10 @@ class ControladorPosicao extends Controller
         $reservasTerreo = Reserva::where('data_reserva',$data)->where('andar','TERREO')->count();
         $reservasP1 = Reserva::where('data_reserva',$data)->where('andar','P1')->count();
         $reservasSub = Reserva::where('data_reserva',$data)->where('andar','SUB')->count();
+
+        $reservasCheckTerreo = Reserva::where('data_reserva',$data)->where('andar','TERREO')->where('checado','sim')->count();
+        $reservasCheckP1 = Reserva::where('data_reserva',$data)->where('andar','P1')->where('checado','sim')->count();
+        $reservasCheckSub = Reserva::where('data_reserva',$data)->where('andar','SUB')->where('checado','sim')->count();
         
         return view('posicoes')
         ->with('reservasTerreo',$reservasTerreo)
@@ -36,7 +40,12 @@ class ControladorPosicao extends Controller
         ->with('qtdPosicaoTerreo',$posicaoTerreo)
         ->with('qtdPosicaoP1',$posicaoP1)
         ->with('dia',$data)
+        ->with('reservasCheckTerreo',$reservasCheckTerreo)
+        ->with('reservasCheckP1',$reservasCheckP1)
+        ->with('reservasCheckSub',$reservasCheckSub)
         ->with('qtdPosicaoSub',$posicaoSub);
+
+        
     }
 
     public function bloqueada(){
@@ -44,6 +53,7 @@ class ControladorPosicao extends Controller
         $bloqueadas = Posicao::where("liberada","nao")->where('empresa_idempresa',$idEmpresa)->get();
 
         return view('bloqueadas')->with("bloqueadas",$bloqueadas);
+        
     }
 
     /**
@@ -97,8 +107,8 @@ class ControladorPosicao extends Controller
             $reserva->hashreserva = hash('md5',date('H:i:s'));
            
             $reserva->save();
-            return view('confirm.confirm')->with('nomePosicao',$nomeposicao)->with('dia',$diaReserva)->with("count",$contReserva)->with('estacionamento',$estacionamento);
-                        
+            //return view('confirm.confirm')->with('nomePosicao',$nomeposicao)->with('dia',$diaReserva)->with("count",$contReserva)->with('estacionamento',$estacionamento);
+              return redirect()->back();          
             
         }
      
@@ -162,8 +172,30 @@ class ControladorPosicao extends Controller
             $nome = $p['nome_posicao'];
         }
         $dia = date("d-m-Y");
-        return view("confirm.confirmblock")->with("nomePosicao",$nome)->with("dia",$dia);
+        //return view("confirm.confirmblock")->with("nomePosicao",$nome)->with("dia",$dia);
+        return redirect()->back();
+
+    }
+
+    public function definirGrupo(Request $request){
+        $idEmpresa = session()->get('idempresa');
+        $getPosicaoGrupo = $request->getPosicaoGrupo;//[0] id grupo ----[1]nome grupo ----[2]cor do grupo 
+        $selectGrupo = explode('|',$request->selectGrupo);
+
+        if($request->selectGrupo =='vaga'){
+            $up = Posicao::where('nome_posicao',$getPosicaoGrupo)->where('empresa_idempresa',$idEmpresa)
+            ->update(['id_grupo'=>0,'cor_grupo'=>"",'nome_grupo'=>""]);
+        }else{
+            $up = Posicao::where('nome_posicao',$getPosicaoGrupo)->where('empresa_idempresa',$idEmpresa)
+            ->update(['id_grupo'=>$selectGrupo[0],'cor_grupo'=>$selectGrupo[2],'nome_grupo'=>$selectGrupo[1]]);
+        }
         
+      
+
+        return redirect()->back();
+
+        
+
 
     }
 

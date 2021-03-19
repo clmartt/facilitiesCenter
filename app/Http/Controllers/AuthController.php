@@ -87,7 +87,7 @@ class AuthController extends Controller
 
         
 
-        return redirect('/modulo');
+        return redirect('/posicoes');
       }
       // </StoreTokensSnippet>
       catch (League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {

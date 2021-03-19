@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Usuario;
 use App\Empresa;
+use App\Grupo;
 use Illuminate\Support\Facades\Session;
 
 class ControladorLogar extends Controller
@@ -44,6 +45,7 @@ class ControladorLogar extends Controller
            session()->put('empresa',$value['empresa_idempresa']);
            session()->put('perfil',$value['perfil']);
            session()->put('garagem',$value['garagem']);
+           session()->put('idGrupo',$value['id_grupo']);
         }
       
 
@@ -52,6 +54,7 @@ class ControladorLogar extends Controller
            $idEmpresa = $value['idempresa'];
            $office = $value['office'];
            session()->put('idempresa',$value['idempresa']);
+           session()->put('nomeEmpresa',$value['nome_empresa']);
            session()->put('office',$value['office']);
            session()->put('posicao',$value['posicoes']);
            session()->put('estacionamento',$value['estacionamento']);
@@ -59,9 +62,19 @@ class ControladorLogar extends Controller
            session()->put('visitantes',$value['visitantes']);
 
         }
+
+        
+        
+        
+        // pegando informações do grupo 
+        $infogrupo = Grupo::where('id_empresa',session()->get('idempresa'))
+        ->where('id_grupo',session()->get('idGrupo'))->get();
+        session()->put('nomeGrupo',$infogrupo[0]['nome_grupo']);
+        session()->put('corGrupo',$infogrupo[0]['cor']);
+
         // chama o metodo da api 
          $viewData = $this->loadViewData();
-         return redirect('/signin');
+         return redirect('/posicoes');
                 
       }
    }
