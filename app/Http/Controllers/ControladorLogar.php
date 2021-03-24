@@ -18,7 +18,10 @@ class ControladorLogar extends Controller
    
       //recebe os dados do form de login
       //abaixo verifica o email e senha do usuario
-      $usuario = Usuario::where('email',$request->input('email'))->where('senha',$request->input('senha'))->get();
+      $usuario = Usuario::where('email',$request->input('email'))
+      ->where('senha',$request->input('senha'))
+      ->where('deleted_at',null)
+      ->get();
       $json = json_decode($usuario);
       if(empty($json)){// se nao retornar valor envia uma mensagem de erro
          

@@ -113,6 +113,28 @@
                         </div>
                             
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsecc"
+                                aria-expanded="true" aria-controls="collapseTwo">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                <span>Centro de Custo</span>
+                            </a>
+                            <div id="collapsecc" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    
+                                    <a class="collapse-item" href="{{route('formNovoCentroCusto')}}">Novo Centro de Custo</a>
+                                    <a class="collapse-item" href="{{route('listaCentroCusto')}}">Listar Centro de Custo</a>
+                                   
+                                
+                                    
+                                    
+                                </div>   
+                                
+                            </div>
+                            
+                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser"
                                 aria-expanded="true" aria-controls="collapseTwo">
@@ -461,7 +483,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Developed by KVMT</span>
                     </div>
                 </div>
             </footer>

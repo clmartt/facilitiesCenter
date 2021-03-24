@@ -350,6 +350,17 @@
 
       })
 
+      $(document).on('click','#excluirCC',function(){
+        var idCC = $(this).val();
+        var dadosCC = idCC.split("|");
+        $("#nomeCentroCusto").empty();
+        $("#idCentroParaExcluir").val('');
+        $("#idCentroParaExcluir").val(dadosCC[0]);
+        $("#nomeCentroCusto").append(dadosCC[1])
+        $('#confirmarExclusaoCC').modal('show');
+
+      })
+
 
 
 

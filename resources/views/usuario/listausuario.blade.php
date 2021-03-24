@@ -16,8 +16,11 @@
                             <th scope="col">Grupo</th>
                             <th scope="col">Perfil</th>
                             <th scope="col">CC</th>
+                            @if (Session::get('perfil')=='adm')
                             <th scope="col">Editar</th>
                             <th scope="col">Excluir</th>
+                            @endif
+                           
                           </tr>
                         </thead>
                         <tbody>
@@ -31,9 +34,11 @@
                                   <td>{{$u->grupo->nome_grupo}}</td>
                                   <td>{{$u->perfil}}</td>
                                   <td>{{$u->centroCusto}}</td>
+                                  @if (Session::get('perfil')=='adm')
                                   <td><a class="btn btn-link text-info" href="{{route('editUser',['idUser'=>$u->idusuario])}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                   </td>
                                   <td><button class="btn btn-link text-danger"  value="{{$u->idusuario}}|{{$u->nome_usuario}}" id="deleteUsuarioLixo"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                                  @endif
                                 </tr>
                                 @endforeach
                             @endisset

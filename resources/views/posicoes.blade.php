@@ -12,6 +12,7 @@
               <tr class="table-primary">
                 <th scope="col">Andar</th>
                 <th scope="col">Qtd Posições</th>
+                <th scope="col">Bloqueadas</th>
                 <th scope="col">Reservadas</th>
                 <th scope="col">Ocupadas</th>
                 <th scope="col">Livres</th>
@@ -19,11 +20,12 @@
             </thead>
             <tbody >
               <tr class="border-bottom">
-              <th scope="row"><a href="{{route('12andar',$dia)}}">12° andar</a></th>
+              <th scope="row"><a href="{{route('12andar',$dia)}}">12° Andar</a></th>
                 <td>{{$qtdPosicaoTerreo}}</td>
+                <td>{{$posicaoTerreoBloqueada}}</td>
                 <td>{{$reservasTerreo}}</td>
                 <td>{{$reservasCheckTerreo}}</td>
-                <td>{{$qtdPosicaoTerreo-$reservasTerreo}}</td>
+                <td>{{($qtdPosicaoTerreo-$posicaoTerreoBloqueada)-$reservasTerreo}}</td>
               </tr>
               
              

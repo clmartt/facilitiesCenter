@@ -21,14 +21,23 @@ class ControladorPosicao extends Controller
         }else{
             $data = date('Y-m-d');
         }
+        // pega a quantidade de posições
         $posicaoTerreo = Posicao::where('andar','TERREO')->count();
         $posicaoP1 = Posicao::where('andar','P1')->count();
         $posicaoSub = Posicao::where('andar','SUB')->count();
 
+        // pega a quantidade de Bloqueadas
+        $posicaoTerreoBloqueada = Posicao::where('andar','TERREO')->where('liberada','!=','sim')->count();
+        $posicaoP1Bloqueada = Posicao::where('andar','P1')->where('liberada','!=','sim')->count();
+        $posicaoSubBloqueada = Posicao::where('andar','SUB')->where('liberada','!=','sim')->count();
+
+         
+        // pega a quantidade de reservas
         $reservasTerreo = Reserva::where('data_reserva',$data)->where('andar','TERREO')->count();
         $reservasP1 = Reserva::where('data_reserva',$data)->where('andar','P1')->count();
         $reservasSub = Reserva::where('data_reserva',$data)->where('andar','SUB')->count();
 
+        //pega a quantidade de checados ou seja ocupadas.
         $reservasCheckTerreo = Reserva::where('data_reserva',$data)->where('andar','TERREO')->where('checado','sim')->count();
         $reservasCheckP1 = Reserva::where('data_reserva',$data)->where('andar','P1')->where('checado','sim')->count();
         $reservasCheckSub = Reserva::where('data_reserva',$data)->where('andar','SUB')->where('checado','sim')->count();
@@ -43,7 +52,10 @@ class ControladorPosicao extends Controller
         ->with('reservasCheckTerreo',$reservasCheckTerreo)
         ->with('reservasCheckP1',$reservasCheckP1)
         ->with('reservasCheckSub',$reservasCheckSub)
-        ->with('qtdPosicaoSub',$posicaoSub);
+        ->with('qtdPosicaoSub',$posicaoSub)
+        ->with('posicaoTerreoBloqueada',$posicaoTerreoBloqueada)
+        ->with('posicaoP1Bloqueada',$posicaoP1Bloqueada)
+        ->with('posicaoSubBloqueada',$posicaoSubBloqueada);
 
         
     }

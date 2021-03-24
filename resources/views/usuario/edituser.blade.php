@@ -23,7 +23,7 @@
                                 <div class="form-group">
                                   
                                   <label for="email">E-mail *</label>
-                                <input type="email" class="form-control  id="email" name="email" value="{{$u->email}}" required >
+                                  <input type="email" class="form-control"  id="email" name="email" value="{{$u->email}}" required >
                                 
                                 </div>
                                                             
@@ -39,10 +39,10 @@
                                   <div class="form-group">
                                     <label for="perfil">Centro de Custo</label>
                                     <select class="custom-select" id="selectCC" name="selectCC">
-                                        <option value="{{$u->centroCusto}}" selected>{{$u->centroCusto}}</option>
+                                        <option value="{{$u->id_centroCusto}}|{{$u->centroCusto}}" selected>{{$u->centroCusto}}</option>
                                        @isset($centroCusto)
                                            @foreach ($centroCusto as $cc)
-                                               <option value="{{$cc->id}}">{{$cc->centroCusto}}</option>
+                                           <option value="{{$cc->id}}|{{$cc->centroCusto}}">{{$cc->centroCusto}}</option>
                                            @endforeach
                                   
                                        @endisset

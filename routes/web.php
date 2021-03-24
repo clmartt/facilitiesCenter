@@ -55,7 +55,12 @@ Route::get('/formgrupo','ControladorGrupo@formGrupo')->name('formGrupo');
 Route::get('/listaGrupos','ControladorGrupo@listaGrupos')->name('listaGrupos');
 Route::get('/listaUsuario','ControladorUsuario@listaUsuario')->name('listaUsuario');
 Route::get('/editUser','ControladorUsuario@editUser')->name('editUser');
-
+Route::get('/formNovoCentroCusto','ControladorCentroCusto@formNovoCentroCusto')->name('formNovoCentroCusto');
+Route::get('/listaCentroCusto','ControladorCentroCusto@listaCentroCusto')->name('listaCentroCusto');
+Route::get('/editCentroCusto','ControladorCentroCusto@editCentroCusto')->name('editCentroCusto');
+Route::post('/salvaNovoCentroCusto','ControladorCentroCusto@salvaNovoCentroCusto')->name('salvaNovoCentroCusto');
+Route::post('/atualizaCentroCusto','ControladorCentroCusto@atualizaCentroCusto')->name('atualizaCentroCusto');
+Route::post('/deleteCentroCusto','ControladorCentroCusto@deleteCentroCusto')->name('deleteCentroCusto');
 
 
 

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-              <b>Grupos</b>
+              <b>Grupos</b> 
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -13,8 +13,11 @@
                           <tr>
                             <th scope="col">Cor</th>
                             <th scope="col">Nome</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Excluir</th>
+                            @if (Session::get('perfil')=='adm')
+                               <th scope="col">Editar</th>
+                               <th scope="col">Excluir</th> 
+                            @endif
+                            
                           </tr>
                         </thead>
                         <tbody>
@@ -23,10 +26,13 @@
                                     <tr>
                                         <th scope="row"><input type="color" value="{{$g->cor}}" disabled></th>
                                         <td>{{$g->nome_grupo}}</td>
-                                        <td><button class="btn btn-link" value="{{$g->id_grupo}}|{{$g->nome_grupo}}|{{$g->cor}}" id="btnEditarGrupo"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
-                                        <td id="tdExcluirGrupo{{$g->id_grupo}}">
-                                            <button class="btn btn-link text-danger" value="{{$g->id_grupo}}" id="btnExcluirGrupo"><i class="fa fa-trash" aria-hidden="true"></i></button> 
-                                        </td>
+                                        @if (Session::get('perfil')=='adm')
+                                            <td><button class="btn btn-link" value="{{$g->id_grupo}}|{{$g->nome_grupo}}|{{$g->cor}}" id="btnEditarGrupo"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
+                                            <td id="tdExcluirGrupo{{$g->id_grupo}}">
+                                                <button class="btn btn-link text-danger" value="{{$g->id_grupo}}" id="btnExcluirGrupo"><i class="fa fa-trash" aria-hidden="true"></i></button> 
+                                            </td>
+                                        @endif
+                                        
                                     </tr>
                                 @endforeach
                             

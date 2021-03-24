@@ -42,7 +42,8 @@ class ControladorUsuario extends Controller
 // CONSULTA OS COLABORADORES NAS GARAGENS (RESERVAS DE GARAGEM)
     public function colabgaragem()
     {
-        $user = Usuario::all();
+        $idempresa = session()->get('idempresa');
+        $user = Usuario::where('empresa_idempresa',$idempresa)->where('deleted_at',null)->get();
         return view('estacionamento.colabgaragem')->with('colab',$user);
     }
 
@@ -84,8 +85,7 @@ class ControladorUsuario extends Controller
     {
         $idempresa = session()->get('idempresa');
         $grupos = Grupo::where('id_empresa',$idempresa)->get();
-        $centroCusto = CentroCusto::where('id_empresa',$idempresa)->get();
-
+        $centroCusto = CentroCusto::where('id_empresa',$idempresa)->where('deleted_at',null)->get();
         return view('usuario.newuser')
         ->with('centroCusto',$centroCusto)
         ->with('grupos',$grupos);
@@ -100,6 +100,8 @@ class ControladorUsuario extends Controller
     public function store(Request $request)
     {
         $request->flash();
+        $dadosCentro = explode('|',$request->selectCC);
+
         $mensagens =[
             'nome.required'=> 'Informe o nome do colaborador!',
             'email.required'=> 'Campo E-mail é Obrigatório!',
@@ -123,7 +125,8 @@ class ControladorUsuario extends Controller
         $usuario->email = $request->email;
         $usuario->senha = $request->senha;
         $usuario->perfil = $request->perfil;
-        $usuario->centroCusto = $request->selectCC;
+        $usuario->id_centroCusto = $dadosCentro[0];// neste array esta o id do centro de custo
+        $usuario->centroCusto = $dadosCentro[1]; // neste array esta o nome do centro de custo
         $usuario->id_grupo = $request->selectGrupo;
         if($request->sim){
             $usuario->garagem = 1;
@@ -137,7 +140,6 @@ class ControladorUsuario extends Controller
         //return view('usuario.newuser')->with('ok','ok');
         return redirect()->back()->with(['ok'=>'ok']);
         
-         
     }
 // atualiza a senha
     public function atualizasenha(Request $request)
@@ -149,7 +151,8 @@ class ControladorUsuario extends Controller
     public function listaUsuario(){
         $idempresa = session()->get('idempresa');
 
-        $usuario = Usuario::where('empresa_idempresa',$idempresa)->get();
+        $usuario = Usuario::where('empresa_idempresa',$idempresa)->where('deleted_at',null)
+        ->orderBy('nome_usuario')->get();
 
         return view('usuario.listausuario')->with('usuario',$usuario);
     }
@@ -158,7 +161,7 @@ class ControladorUsuario extends Controller
         $idempresa = session()->get('idempresa');
         $idUser = $request->idUser;
         $usuario = Usuario::where('idusuario',$idUser)->where('empresa_idempresa',$idempresa)->get();
-        $centroCusto = CentroCusto::where('id_empresa',$idempresa)->get();
+        $centroCusto = CentroCusto::where('id_empresa',$idempresa)->where('deleted_at',null)->get();
         $grupos = Grupo::where('id_empresa',$idempresa)->get();
         return view('usuario.edituser')
         ->with('grupos',$grupos)
@@ -168,18 +171,38 @@ class ControladorUsuario extends Controller
 
     public function atualizaUser(Request $request){
         //dd($request->all());
-          $up = Usuario::where('empresa_idempresa',$request->empresa)
-          ->where('idusuario',$request->iduser)
-          ->update([
-             'nome_usuario'=> $request->nome,
-             'email'=> $request->email,
-             'perfil'=> $request->perfil,
-             'centroCusto'=> $request->selectCC,
-             'id_grupo'=> $request->selectGrupo
+        if($request->selectCC !='|'){
+         $dadoCentro = explode('|',$request->selectCC);
+         $up = Usuario::where('empresa_idempresa',$request->empresa)
+         ->where('idusuario',$request->iduser)
+         ->update([
+            'nome_usuario'=> $request->nome,
+            'email'=> $request->email,
+            'perfil'=> $request->perfil,
+            'id_centroCusto'=>$dadoCentro[0],
+            'centroCusto'=> $dadoCentro[1],
+            'id_grupo'=> $request->selectGrupo
  
  
-          ]);
+         ]);
  
+        }else{
+         $dadoCentro = explode('|',$request->selectCC);
+         $up = Usuario::where('empresa_idempresa',$request->empresa)
+         ->where('idusuario',$request->iduser)
+         ->update([
+            'nome_usuario'=> $request->nome,
+            'email'=> $request->email,
+            'perfil'=> $request->perfil,
+            'id_centroCusto'=>null,
+            'centroCusto'=> null,
+            'id_grupo'=> $request->selectGrupo
+ 
+ 
+         ]);
+ 
+        }
+         
           if($up){
              return redirect()->route('listaUsuario');
           }else{
@@ -191,8 +214,21 @@ class ControladorUsuario extends Controller
      public function deletaUsuario(Request $request){
         $idempresa = session()->get('idempresa');
         $idUser = $request->idUser;
+        $diaHoje = date('Y-m-d');
+
+        // realizar a tecnica de Softdelete no usuario
         $user = Usuario::where('empresa_idempresa',$idempresa)
-        ->where('idusuario',$idUser)->delete();
+        ->where('idusuario',$idUser)->update
+        (['deleted_at'=>$diaHoje
+               
+        ]);
+        
+        if($user){
+            $reservas = Reserva::where('usuario_idusuario',$idUser)->where('data_reserva','>=',$diaHoje)->delete();
+         
+        }
+                
+       
         return redirect()->back();
     }
 
